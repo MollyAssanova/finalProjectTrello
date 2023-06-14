@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  layout:decorate="main_layout.html">
+
+    <div layout:fragment="siteContent">
+        <a th:href="@{'/addtaskpage'}" class="card-link">+ New Task</a>
+
+        <h1>Folder Details</h1>
+        <h2>Folder Information</h2>
+        <p>Folder Name: <span th:text="${folder.name}"></span></p>
+        <hr>
+        <h2>Categories</h2>
+        <div>
+            <ul>
+                <li th:each="category : ${folder.categories}" th:text="${category.name}x" th:href="${'/delete-category'}"></li>
+            </ul>
+        </div>
+        <button  th:href="@{'/addcatpage'}">Add Category</button>
+        <hr>
+        <h2>Tasks in this Folder</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task Name</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.id}"></td>
+                <td th:text="${task.name}"></td>
+                <td ><button class="btn btn-danger" th:href="${'/delete-task'}">Delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</html>

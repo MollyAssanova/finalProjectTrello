@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  layout:decorate="main_layout.html">
+
+<div layout:fragment="siteContent">
+    <form action="/add-folder" method="post">
+        <div class="row">
+            <div class="col-12">
+                <label>Name:</label>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <input type="text" name="name" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <button class="btn btn-success">+Add folder</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+</html>

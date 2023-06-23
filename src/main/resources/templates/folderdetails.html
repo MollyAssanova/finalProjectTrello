@@ -9,11 +9,11 @@
         <p>Folder Name: <span th:text="${folder.name}"></span></p>
         <hr>
         <h2>Categories</h2>
-        <div>
-            <ul>
-                <li th:each="category : ${folder.categories}" th:text="${category.name}x" th:href="${'/delete-category'}"></li>
-            </ul>
-        </div>
+            <div>
+		<ul>
+    			<li th:each="category : ${folder.categoriesList}" th:text="${category.name}" th:href="${'/delete-category'}"></li>
+		</ul>
+            </div>
         <button  th:href="@{'/addcatpage'}">Add Category</button>
         <hr>
         <h2>Tasks in this Folder</h2>

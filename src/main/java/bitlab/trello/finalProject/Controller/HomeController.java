@@ -33,8 +33,8 @@ public class HomeController {
 
     @GetMapping(value = "/")
     public String index(Model model) {
-        List<Folders> folders = foldersRepository.findAll();
-        model.addAttribute("folders", folders);
+          List<Folders> folders = foldersRepository.findAll();
+          model.addAttribute("folders", folders);
         return "index";
     }
 
